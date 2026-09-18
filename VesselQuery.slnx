@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="VesselQuery.Api/VesselQuery.Api.csproj" />
+  <Project Path="VesselQuery.Core/VesselQuery.Core.csproj" />
+  <Project Path="VesselQuery.Tests/VesselQuery.Tests.csproj" />
 </Solution>

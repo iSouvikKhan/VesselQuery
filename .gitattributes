@@ -1,0 +1,2 @@
+# Treat compressed data as binary (no line-ending conversion, no text diffs).
+*.gz binary

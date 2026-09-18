@@ -1,6 +1,74 @@
-@VesselQuery.Api_HostAddress = http://localhost:5285
-
-GET {{VesselQuery.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+@host = http://localhost:5285
 
 ###
+POST {{host}}/api/vessels/query
+Content-Type: application/json
+
+{
+  "query": "WHERE Z13_STATUS_CODE = 4 AND BUILDER_GROUP = 'Guoyu Logistics'"
+}
+
+###
+POST {{host}}/api/vessels/query
+Content-Type: application/json
+
+{
+  "query": "WHERE Z13_STATUS_CODE = 4 AND BUILDER_GROUP = ‘Guoyu Logistics’"
+}
+
+###
+POST {{host}}/api/vessels/query
+Content-Type: application/json
+
+{
+  "query": "WHERE Z13_STATUS_CODE < 4",
+  "take": 5
+}
+
+###
+POST {{host}}/api/vessels/query
+Content-Type: application/json
+
+{
+  "query": "WHERE Z13_STATUS_CODE > 4",
+  "take": 5
+}
+
+###
+POST {{host}}/api/vessels/query
+Content-Type: application/json
+
+{
+  "query": "WHERE Z13_STATUS_CODE = 4",
+  "skip": 100,
+  "take": 5
+}
+
+###
+POST {{host}}/api/vessels/query
+Content-Type: application/json
+
+{
+  "query": "WHERE BUILDER_GROUP = 'Guoyu Logistics'"
+}
+
+###
+POST {{host}}/api/vessels/query
+Content-Type: application/json
+
+{
+  "query": "WHERE (FLAG = 'Panama' OR FLAG = 'Liberia') AND NOT A12_YEAR_BUILT < 2015 AND A04_DWT_tonnes >= 100000",
+  "take": 5
+}
+
+###
+POST {{host}}/api/vessels/query
+Content-Type: application/json
+
+{
+  "query": "WHERE BUILDR_GROUP = 'Guoyu Logistics'"
+}
+
+###
+GET {{host}}/api/vessels/fields
+Accept: application/json
